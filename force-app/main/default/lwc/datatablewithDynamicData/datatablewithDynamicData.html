@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Contact Data Table">
+        <p class="slds-p-horizontal_small">
+            <lightning-datatable
+                data={contacts.data}
+                columns={tablecolumns}
+                key-field="id"
+                onrowselection={handelSelectedRows}>
+            </lightning-datatable>
+        </p>
+        <p slot="footer">
+            <lightning-button variant="destructive" label="Delete" title="Delete Records"
+                onclick={handleDeleteSelectedContacts} class="slds-m-left_x-small"></lightning-button>
+        </p>
+    </lightning-card>
+    <lightning-card title="Selected Contacts">            
+        <template for:each={contactRecordList} for:item="selectedContact" for:index="contIndex">
+            <p key={selectedContact.Id} class="slds-p-horizontal_small">
+                {selectedContact.FirstName} {selectedContact.LastName}
+            </p>
+        </template>   
+      </lightning-card>
+</template>

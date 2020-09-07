@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  title={title}>
+        <lightning-button label="Addition" variant="brand" slot="actions" onclick={handleAddition}></lightning-button>
+        &nbsp;<br/><lightning-button label="Sub" variant="brand" slot="actions" onclick={handleSub}></lightning-button>
+
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="number" name="fstNumber" label="First Number" 
+            value={firstNumber} placeholder="First Number..."
+            onchange={handleChange}></lightning-input>
+            <lightning-input type="number" name="secNumber" label="Last Number"
+            value={secondNumber}  onchange={handleChange} placeholder="Second Number..."></lightning-input>
+        </p>
+        <p slot="footer">
+            Result:{result}
+        </p>
+    </lightning-card>
+</template>

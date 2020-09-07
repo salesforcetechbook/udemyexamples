@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="fields" type="String[]" default="['FirstName','LastName','Email','LeadSource']" />
+    <aura:attribute name="recordId" type="String"/>
+    <lightning:card title="LWC to Aura Example">
+        <p class="slds-p-horizontal_small">
+            <lightning:layout>
+                <lightning:layoutItem size="4" flexibility="auto"> 
+                    <c:contactListLwc onselectedcontact="{!c.showSlectedContact}" aura:id="lwccomp"></c:contactListLwc>  
+                </lightning:layoutItem>
+                <lightning:layoutItem size="8">
+                    <lightning:card title="Contact Detail(Aura)">
+                        <p class="slds-p-horizontal_small">
+                            <lightning:recordForm
+                                aura:id="myRecordForm"
+                                recordId="{!v.recordId}"
+                                objectApiName="Contact"
+                                fields="{!v.fields}"
+                                columns="1"
+                                mode="readonly" />
+                        </p>
+                    </lightning:card>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </p>
+    </lightning:card>
+</aura:component>

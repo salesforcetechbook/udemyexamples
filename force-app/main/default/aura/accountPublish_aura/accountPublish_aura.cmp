@@ -1,0 +1,13 @@
+<aura:component controller="AccountController" implements="flexipage:availableForAllPageTypes" access="global">
+    <lightning:messageChannel type="SampleMessageChannel__c" aura:id="sampleMessageChannel"/>
+    <aura:attribute name="accoultList" type="Account[]"/>   
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <lightning:card title="Account List Aura">
+        <p class="slds-p-horizontal_small">
+            <aura:iteration items="{!v.accoultList}" var="item">
+                <a class="slds-truncate" href="#" data-actid="{!item.Id}"  onclick="{!c.handleClick}">{!item.Name}</a> <br/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+
+</aura:component>

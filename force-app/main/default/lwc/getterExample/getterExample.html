@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Data Binding with Getter">
+        <p class="slds-p-horizontal_small">           
+            <lightning-input name='firstName' label="First Name" onchange={handleChange}></lightning-input>
+            <lightning-input name='lastName' label="Last Name" onchange={handleChange}></lightning-input>
+            Uppercased Full Name: {uppercasedFullName}
+        </p>
+    </lightning-card>   
+</template>

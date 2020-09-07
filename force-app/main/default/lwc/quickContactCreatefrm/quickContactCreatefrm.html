@@ -1,0 +1,19 @@
+<template>    
+    <lightning-card title="Quick Contact Update">
+        <div class="slds-m-around_medium">
+            <!--lightning-record-form        
+                object-api-name="Contact"
+                fields={contactfields}
+                columns="2"       
+                onsuccess={handleSuccess}
+                onsubmit={handleSubmit}-->
+            <lightning-record-form  record-id={recordId}     
+                object-api-name="Contact"
+                fields={contactfields}
+                columns="2"       
+                onsuccess={handleSuccess}
+                mode="view">
+        </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

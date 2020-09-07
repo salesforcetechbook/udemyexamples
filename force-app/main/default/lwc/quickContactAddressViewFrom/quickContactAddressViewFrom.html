@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Quick Address View">
+        <div class="slds-m-around_medium">  
+            <lightning-record-view-form
+                record-id={recordId}
+                object-api-name="Contact">
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small">
+                        <lightning-output-field field-name="MailingStreet">
+                        </lightning-output-field>                   
+                        <lightning-output-field field-name="MailingCity">
+                        </lightning-output-field> 
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <lightning-output-field field-name="MailingState">
+                        </lightning-output-field>
+                        <lightning-output-field field-name="MailingPostalCode">
+                        </lightning-output-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <lightning-output-field field-name="MailingCountry">
+                        </lightning-output-field>                        
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input type="checkbox" label="Show details" onchange={handleChange}></lightning-input>
+            <template if:true={areaDetailsVisible}>
+               If True  Details are visible now! {areaDetailsVisible}
+            </template>
+            <template if:false={areaDetailsVisible}>
+               If False Details are visible now! {areaDetailsVisible}
+            </template>
+        </div>
+    </lightning-card>
+</template>

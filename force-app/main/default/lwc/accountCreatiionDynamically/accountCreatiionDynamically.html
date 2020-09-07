@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+            Account Creation using Apex 
+        </h3>
+        <div slot="footer">
+            <lightning-button label="Submit" onclick={createAccountRecord} variant="brand"></lightning-button>
+        </div>
+        <p class="slds-p-horizontal_small">
+            <template for:each={fieldValuesList} for:item="fieldname" for:index="index">
+                <lightning-input key={fieldname} type="text" name={fieldname} label={fieldname} data-id={fieldname} onchange={handleChange}></lightning-input>
+            </template>
+        </p>
+
+    </lightning-card>
+</template>

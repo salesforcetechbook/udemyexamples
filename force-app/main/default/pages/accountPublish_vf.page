@@ -1,0 +1,22 @@
+<apex:page controller="AccountController">
+    <script>
+         var SAMPLEMC = "{!$MessageChannel.SampleMessageChannel__c}";
+         function handleClick(accountId) {   
+            const message = {
+                recordId: accountId,
+                recordData: { value: "Message from VF Page" }                
+            }
+            sforce.one.publish(SAMPLEMC,message);
+         }
+
+
+    </script>
+    <apex:pageBlock title="Accounts from VF Page">
+        <apex:pageBlockTable value="{!Accounts}" var="actObj" 
+            styleClass="slds-table slds-table_bordered slds-table_fixed-layout slds-table_col-bordered slds-table_resizable-cols"> 
+            <apex:column headerValue="Account Name" styleClass="slds-line-height_reset">
+                <a href="#" onclick="handleClick('{!actObj.Id}');">{!actObj.Name}</a>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,81 @@
+<template>
+      <!--Combo box with static values -->
+      <lightning-card title="Combo Box_with static values" icon-name="custom:custom67">
+        <template if:true={options}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox 
+                    name="Status"
+                    label="Status"
+                    value={selectedValue}
+                    placeholder="Select Progress"
+                    options={options}
+                    onchange={handleChange}>
+                </lightning-combobox>
+                <p>Selected Value is:<b>{selectedValue}</b></p>
+            </div>
+        </template>
+      </lightning-card><br/>
+      <!--Lead Source with Specific Record Type-->      
+    <lightning-card title="Combo Box_Lead Source" icon-name="custom:custom67">
+        <template if:true={leadSourceValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="Lead_Source"
+                label="Lead Source"
+                value={selectedLeadSource}
+                placeholder="Select Lead Source"
+                options={leadSourceValues.data.values}
+                onchange={handleLeadSourceChange} ></lightning-combobox>    
+                <p>Selected Lead Source is:<b>{selectedLeadSource}</b></p>
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    <!--Account type with Master Record Type-->
+    <lightning-card title="Combo Box_Type Values" icon-name="custom:custom67">
+        <template if:true={typeValues.data}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="AccountType"
+                label="Account Type"
+                value={selectedAccountType}
+                placeholder="Select Progress"
+                options={typeValues.data.values}
+                onchange={handleTypeChange} ></lightning-combobox>    
+                <p>Selected Account Type is: <b>{selectedAccountType}</b></p>
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    <!--Profile List-->
+    <lightning-card title="Combo box with Profile list from apex" icon-name="custom:custom67">
+        <template if:true={profileOptionsList}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox
+                name="Profile"
+                label="Profile"
+                value={selectedProfile}
+                placeholder="Select Profile"
+                options={profileOptionsList}
+                onchange={handleProfileChange} ></lightning-combobox>    
+                <p>Selected Profile is:<b>{selectedProfile}</b></p>
+            </div>
+        </template>      
+    </lightning-card> <br/>
+    <!--Profile list with select tag-->
+    <lightning-card title="Select List with Profile List from apex" icon-name="custom:custom67">
+        <template if:true={profileOptionsList}>
+            <div class="slds-m-around_medium">
+                <select onchange={handleProfileChange} class="slds-select selectProfileList" data-id="selprof" name="selectuser">
+                    <option value="">--None--</option>
+                    <template for:each={profileOptionsList} for:item="item">
+                        <option value={item.value} key={item.value}>{item.label}</option>
+                    </template>
+                </select>
+            </div>
+            <p>Selected Profile is:<b>{selectedProfile}</b></p>           
+        </template>
+    </lightning-card>
+
+
+
+
+</template>

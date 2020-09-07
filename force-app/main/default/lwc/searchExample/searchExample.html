@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search" value={accountName}>
+
+            </lightning-input>
+
+            <template for:each={accountList} for:item="accountObj" for:index="index">
+                <option key={accountObj.id}>{accountObj.Name}</option>
+            </template>
+        </div>
+    </lightning-card>
+</template>

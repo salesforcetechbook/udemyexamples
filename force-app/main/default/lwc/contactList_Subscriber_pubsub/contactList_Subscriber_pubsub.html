@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Contact List">
+        <p class="slds-p-horizontal_small">
+            <lightning-datatable if:true={contactList}
+                key-field="id"
+                data={contactList}
+                columns={tablecolumns}>
+            </lightning-datatable> 
+        </p>
+        <p if:false={contactList} class="slds-p-horizontal_small">
+            {message}
+        </p>
+    </lightning-card>
+</template>

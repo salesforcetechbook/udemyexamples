@@ -1,0 +1,17 @@
+<template>
+    <template if:true={contacts.data}>
+        <lightning-card title="Contact List(LWC)">
+            <p class="slds-p-horizontal_small">
+                <template for:each={contacts.data} for:item="contact"> 
+                    <p key={contact.Id}>    
+                        <lightning-layout vertical-align="center">
+                            <lightning-layout-item padding="around-small">   
+                                <a href="#" onclick={sendidtoAura} data-contid={contact.Id}>{contact.LastName}</a>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </p>
+                </template>
+            </p>
+        </lightning-card>
+    </template>
+</template>

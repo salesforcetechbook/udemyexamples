@@ -1,0 +1,3 @@
+<aura:component implements="force:lightningQuickAction,flexipage:availableForRecordHome,force:hasRecordId">
+    <c:prepopulateValuesComp recordId="{!v.recordId}"></c:prepopulateValuesComp>
+</aura:component>

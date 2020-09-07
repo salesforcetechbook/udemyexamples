@@ -1,0 +1,22 @@
+<template>
+    <lightning-card  title="Contact Detail">
+        <p class="slds-p-horizontal_small">  
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <b>First Name</b> : {contactRec.FirstName}
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <b>Last Name</b> : {contactRec.LastName}    
+                </lightning-layout-item>  
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <b>Email</b> : {contactRec.Email}
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <b>Phone</b> : {contactRec.Phone}    
+                </lightning-layout-item>                  
+            </lightning-layout>
+        </p>
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Contact Records">
+        <template for:each={contacts.data} for:item="contactObj" for:index="contIndex">
+            <p key={contactObj.Id} class="slds-p-horizontal_small">
+                {contactObj.FirstName} {contactObj.LastName}
+            </p>        
+        </template>
+    </lightning-card>
+</template>

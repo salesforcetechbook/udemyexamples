@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Delete Contact" icon-name="standard:record">       
+        <template if:true={contactList}>  
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                      <th class="" scope="col">
+                        <div class="slds-truncate" title="Last Name">Last Name</div>
+                      </th>
+                      <th class="" scope="col">
+                        <div class="slds-truncate" title="Action">Delete Contact</div>
+                      </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contactList.data} for:item="contactObj">
+                        <tr class="slds-hint-parent"  key={contactObj.Id}>  
+                            <td data-label="Last Name">
+                                <div class="slds-truncate" title="lastName"> {contactObj.LastName}</div>
+                            </td>
+                            <td data-label="Action">
+                                <div class="slds-truncate" title="Action">
+                                    <lightning-button-icon  icon-name="utility:delete"   data-recordid={contactObj.Id}  onclick={deleteContact}>
+                                        
+                                    </lightning-button-icon>
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+    </lightning-card>
+</template>
