@@ -6,6 +6,10 @@
     </types>
     <types>
         <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexComponent</name>
     </types>
     <types>
@@ -31,6 +35,10 @@
     <types>
         <members>*</members>
         <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Account.Total_No_of_Files__c</members>
+        <name>CustomField</name>
     </types>
     <version>48.0</version>
 </Package>
